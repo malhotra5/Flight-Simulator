@@ -107,7 +107,7 @@ This results in the following -
 ### Making graphics for plane's pitch
 This following diagram explaines the pitch, roll and yaw directions of an aircraft. These following pieces of code work with the pitch of a plane.
 
- ![GitHub Logo](/Pictures/airDirections.jpg)
+ ![GitHub Logo](/Pictures/airDirections.png)
 
 There are 4 parts to it - 
 * When we press the up or down arrow key, the angle at which we see the ground should change
