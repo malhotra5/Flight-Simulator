@@ -91,7 +91,7 @@ This will give us the following landscape. The first one is without noise, the s
 
  ![GitHub Logo](/Pictures/withoutNoise.jpg)| ![GitHub Logo](/Pictures/noise.jpg)
  ----------------------------------------- |---------------------------------------
-    Landscape without noise|Landscape with noise
+ Landscape without noise|Landscape with noise
 
 
 ### Moving the landscape
