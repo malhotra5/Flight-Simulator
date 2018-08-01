@@ -21,7 +21,7 @@ Download the zip for this repository or use git on the terminal. The terminal co
 ## Running
 To run the following, click the run button on the top left - 
 
-![GitHub Logo](/Pictures/runButton.jpg)
+![GitHub Logo](/Pictures/run.jpg)
 
 ## How it works
 
