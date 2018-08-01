@@ -116,6 +116,26 @@ There are 4 parts to it -
 * When the plane comes near the ground, it should seem relatively faster than when the plane is higher above the ground
 
 #### Part 1 - Adjusting the view of the plane 
+Lets start by assigning some keys to the pitch control. Similar to a plane, the *Down* arrow will make the plane's view move up. The *Up* arrow will make the plane's view move down. We can make a keyPressed() function for this task. \
+
+When we performed the transformation on the triangle strips, we rotated the X,Y and Z axis by 60 degrees. Now, we can assign that to a variable angle. Using the key binds (the up and down arrow keys), we can adjust the angle of the land to make it look like we are adjusting the view of the plane. The following code explaines it. 
+
+    void keyPressed(){
+        if(key == CODED){ //Check if the keys are pressed
+            if(keyCode == UP){ 
+                angle -= 0.05; //Adjust the angle of the axis to adjust the view of the aircraft 
+            }
+            if(keyCode == DOWN){
+                angle += 0.05;
+            }
+        }
+    }
+
+This code results in the following - 
+
+ ![GitHub Logo](/Pictures/angleAdjust.gif)
+ 
+
 #### Part 2 - Adjusting the height of the land
 #### Part 3 - Making the size of the land more dynamic
 #### Part 4 - Adjusting aircraft speed depending on the height
