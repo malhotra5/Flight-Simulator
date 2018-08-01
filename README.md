@@ -95,7 +95,14 @@ This will give us the following landscape. The first one is without noise, the s
 
 
 ### Moving the landscape
+Now that we have made the landscape, we need to add the effect of it moving. To make it look like that, we can constantly adjust the noise across the Y-axis, to make the land move. The following addition of code does that. Notice that the variable yoff, that has been assigned to flying, is used during the intialization of the Z-axis values for the noise. 
+     
+     flying -= flyRate; //flyrate is a constant. You can meddle with this value
+     float yoff = flying; // We constantly adjust the value of yoff using flying
+     
+This results in the following - 
 
+ ![GitHub Logo](/Pictures/noiseMove.gif)
 
 ### Making graphics for plane's pitch
 
