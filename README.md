@@ -39,7 +39,7 @@ Now, we will make our landscape using traingle strips. This is a series of trian
             endShape();
      }
      
- This method creates the following like grid of triangles.
+This method creates the following like grid of triangles. Note that I have initialized the variables rows and cols. This just defines how many columns and rows we want to make the triangle strip for. You will see the significance of making a variable for the number of columns and rows later on in this READ.me.  
  
  ![GitHub Logo](/Pictures/triangleStrip.jpg)
  
@@ -157,6 +157,12 @@ The following illustrates the results of the new changes -
 ![GitHub Logo](/Pictures/Flying_Up_Down.gif)
 
 #### Part 3 - Making the size of the land more dynamic
+During the creation of the traingle strips, we passed in variables for the number of columns and rows. This determined how big our traingle strip was. If you fly the plane high enough, you will start to see the ends of the triangle strips. This can be seen below.
+
+![GitHub Logo](/Pictures/sizeLand.jpg)
+
+We need to make sure that we increase the number of columns and rows as we go higher into the air. Later, we can add water or something else. For now I will keep it simple. 
+
 #### Part 4 - Adjusting aircraft speed depending on the height
 
 ### Making graphics for plane's roll
