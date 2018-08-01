@@ -105,6 +105,20 @@ This results in the following -
  ![GitHub Logo](/Pictures/noiseMove.gif)
 
 ### Making graphics for plane's pitch
+This following diagram explaines the pitch, roll and yaw directions of an aircraft. These following pieces of code work with the pitch of a plane.
+
+ ![GitHub Logo](/Pictures/airDirections.jpg)
+
+There are 4 parts to it - 
+* When we press the up or down arrow key, the angle at which we see the ground should change
+* The angle of the view towards the ground should determine how high we are relative to the ground. Higher we go, the lower the land should go
+* The size of the land is at a set size. We need to make it more dynamic. The higher the plane goes, the more of the land you can see. Therefore, the higher the plane goes, larger the amount of land needed
+* When the plane comes near the ground, it should seem relatively faster than when the plane is higher above the ground
+
+#### Part 1 - Adjusting the view of the plane 
+#### Part 2 - Adjusting the height of the land
+#### Part 3 - Making the size of the land more dynamic
+#### Part 4 - Adjusting aircraft speed depending on the height
 
 ### Making graphics for plane's roll
 
