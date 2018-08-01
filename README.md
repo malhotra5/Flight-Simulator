@@ -12,7 +12,6 @@ Format: ![Alt Text](url)
 Be sure to set the programming language to which ever one you want. This can be done by looking at the top right corner. Notice, the picture above says **"Java"** in the top right corner.
 
 ![GitHub Logo](/Pictures/procEnv_Python.jpg)
-Format: ![Alt Text](url)
 
 ### Installing 
 Download the zip for this repository or use git on the terminal. The terminal command is - 
@@ -23,7 +22,6 @@ Download the zip for this repository or use git on the terminal. The terminal co
 To run the following, click the run button on the top left - 
 
 ![GitHub Logo](/Pictures/runButton.jpg)
-Format: ![Alt Text](url)
 
 ## How it works
 
