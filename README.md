@@ -7,7 +7,6 @@ Get the processing environment, an open-source graphical library. This code can 
 The processing environment looks like the following - 
 
 ![GitHub Logo](/Pictures/procEnv_Java.jpg)
-Format: ![Alt Text](url)
 
 Be sure to set the programming language to which ever one you want. This can be done by looking at the top right corner. Notice, the picture above says **"Java"** in the top right corner.
 
