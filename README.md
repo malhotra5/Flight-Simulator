@@ -13,6 +13,10 @@ Be sure to set the programming language to which ever one you want. This can be 
 ![GitHub Logo](/Pictures/procEnv_Python.jpg)
 Format: ![Alt Text](url)
 
+### Installing 
+Download the zip for this repository or use git on the terminal. The terminal command is - 
+  git clone https://www.github.com/malhotra5/Flight-Simulator
+
 
 
 
