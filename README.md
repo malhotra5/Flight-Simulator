@@ -5,6 +5,7 @@ These instructions will help get the flight simulator up and running.
 ### Prerequisites
 Get the processing environment, an open-source graphical library. This code can be replicated to be  written in Python also. Although, I have done it in java. Visit this website for more information about the python environment - https://github.com/jdf/processing.py \
 The environment looks this the following - 
+
 ![GitHub Logo](/Pictures/procEnv_Java.jpg)
 Format: ![Alt Text](url)
 
@@ -14,9 +15,9 @@ Be sure to set the programming language to which ever one you want. This can be 
 Format: ![Alt Text](url)
 
 ### Installing 
-Download the zip for this repository or use git on the terminal. The terminal command is - \
-    git clone jgjh
-https://www.github.com/malhotra5/Flight-Simulator
+Download the zip for this repository or use git on the terminal. The terminal command is - 
+    
+    git clone https://www.github.com/malhotra5/Flight-Simulator
 
 
 
