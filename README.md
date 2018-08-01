@@ -1,7 +1,7 @@
 # Flight-Simulator
 A flight simulator made from scratch using the graphical capabilities of processing.
 ## Getting Started
-These instructions will help get the flight simulator up and running. 
+These instructions will help get the flight simulator up and running. This repository is still under work so I will be updating the repository as I go along finishing my program. A lot of the work will be dirty but after a few days this project should be completed. Once the project is completed I will take these words out of the repository. Thanks - Rohit Malhotra
 ### Prerequisites
 Get the processing environment, an open-source graphical library. This code can be replicated to be  written in Python also. I have done it in Java. Visit this website for more information about the python environment - https://github.com/jdf/processing.py 
 The processing environment looks like the following - 
