@@ -45,11 +45,9 @@ Now, we will make our landscape using traingle strips. This is a series of trian
  
  To make it look like a landscape, we can perform the following transformations.
  
-    ```
     translate(width/2, height/2+500);
     rotateX(PI/3);
     translate(-w/2, -h/2);
-    ```
     
 This gives the following - 
 
@@ -59,7 +57,41 @@ The ground still looks very flat and artificial. To add various bumps and mounta
 
     size(600, 600, P3D);    //Notice the 3D when specifying the size of the window
 
-To specify z-values, we need to change the coordinates of the vertices in the triangle strip. 
+To specify z-values, we need to change the coordinates of the vertices in the triangle strip. We can create a 2D array of z values for each vertex in the traingle strip. Then we can use these z-values and assign them to each vertex. We define the z-values using the following - 
+
+    float[][] terrain; //Initialize 2D array
+    terrain = new float[cols][rows]; // Assign to 2D array
+    
+    float yoff = flying;
+    for (int y = 0; y < rows; y++) {
+        float xoff = 0;
+        for (int x = 0; x < cols; x++) {
+            terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 100); //Create a random value for z and map it between a value
+            xoff += 0.07;
+        }
+        yoff += 0.07;
+    }
+Notice that we used the noise function to create a random value. If you choose to use a random value instead, you will notice the  z values to be extremely different, which will make the land look very artifical. We use the noise (perlin noise) function to get more of a natural like look by getting random numbers that are relatively close to each other. Later on, you will see 2 pictures, showing the difference between the noise and the random function. \
+
+To create the z value, we take the render method that was previously shown and add the z values to each vertex. This following is the new render method.
+
+    public void render(int rows, int cols, float[][] terrain){
+        for (int y = 0; y < rows-1; y++) {
+        beginShape(TRIANGLE_STRIP);
+            for (int x = 0; x < cols; x++) {
+                vertex(x*scl, y*scl, terrain[x][y]);
+                vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
+            }
+        endShape();
+        }
+ 
+    }
+ 
+This will give us the following landscape. The first one is without noise, the second one is with the noise. Credits to Daniel Shiffman for his amazing tutorials on Perlin Noise on the coding train. You can find more information about Perlin Noise over here - https://en.wikipedia.org/wiki/Perlin_noise
+
+ ![GitHub Logo](/Pictures/withoutNoise.jpg)| ![GitHub Logo](/Pictures/noise.jpg)
+ ----------------------------------------- |---------------------------------------
+    Landscape without noise|Landscape with noise
 
 
 ### Moving the landscape
