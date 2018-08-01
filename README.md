@@ -15,7 +15,8 @@ Format: ![Alt Text](url)
 
 ### Installing 
 Download the zip for this repository or use git on the terminal. The terminal command is - \
-  ```git clone https://www.github.com/malhotra5/Flight-Simulator```
+    git clone jgjh
+https://www.github.com/malhotra5/Flight-Simulator
 
 
 
