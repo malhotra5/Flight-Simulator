@@ -15,13 +15,13 @@ Format: ![Alt Text](url)
 
 ### Installing 
 Download the zip for this repository or use git on the terminal. The terminal command is - 
-  git clone https://www.github.com/malhotra5/Flight-Simulator
+  ```git clone https://www.github.com/malhotra5/Flight-Simulator```
 
 
 
 
 
 
-## Tasks in process 
+## Tasks in progress 
 I am working to replicate the work I have done into Python. Additional flight features such as the roll for the plane need to be added.
 
