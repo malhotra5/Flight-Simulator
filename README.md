@@ -73,7 +73,7 @@ To specify z-values, we need to change the coordinates of the vertices in the tr
     }
 Notice that we used the noise function to create a random value. If you choose to use a random value instead, you will notice the  z values to be extremely different, which will make the land look very artifical. We use the noise (perlin noise) function to get more of a natural like look by getting random numbers that are relatively close to each other. Later on, you will see 2 pictures, showing the difference between the noise and the random function. \
 
-To create the z value, we take the render method that was previously shown and add the z values to each vertex. This following is the new render method.
+To create the z value, we take the render method that was previously shown and add the z values to each vertex. The following is the new render method.
 
     public void render(int rows, int cols, float[][] terrain){
         for (int y = 0; y < rows-1; y++) {
