@@ -135,8 +135,27 @@ This code results in the following -
 
  ![GitHub Logo](/Pictures/angleAdjust.gif)
  
-
 #### Part 2 - Adjusting the height of the land
+Now that we have adjusted the angle of view, we need to make like the plane is going higher or lower in the air, based on the angle. The plane should soar into the sky if the angle is extremely high, and plumet to the ground if the angle is extremely low. \
+
+When we did the transformations at the start of this READ.me, we had performed 2 tranlations. Turns out, if we can change the transformations to support 3D values, then we can adjust the height of the ground. If the angle is very high, we start to push the ground away, if the angle if very low, we start to pull the ground towards the plane. This creates the visual effect of the plane flying.The new transformations are - 
+
+    translate(width/2, height/2+500,0); //Notice the z-value
+    rotateX(angle); //This was the previously adjusted transformation for the pitch of the plane
+    translate(-w/2, -h/2,  -altitude); //Notice the z value. This is the value we wil adjust for the height of the ground. The variables                                                            // h and w wil be explained later
+We can now define the variable **height** above to be a function of the angle of the plane. The picture below wil help give some intuition about it. 
+
+![GitHub Logo](/Pictures/heightDiagram.jpg)
+
+Notice that we are interested in the new height. If you are familiar with vectors, you can determine the velocity of the plane using the angle and the speed at which the plane flies. We defined this speed earlier to be the variable **flyRate**. Now, using this vector diagram, we can use the law of sines to determine the **new height**. This new height is the **sin of the angle x flyRate**. Therefore, we can keep adjusting the height of the plane by adding **original height + new height**. There is a catch though. We set the original angle of the plane to be at an angle of 60 degrees. So, when we calculate **new height**, we must subtract 60 degrees from the original angle. This way, when the plane starts, it is always moving straight. Not up or down. \
+The following code adjusts height - 
+
+    altitude = altitude + sin((angle-PI/3))*flyRate*1000; //We multiply the result into 1000 to make any significant progress.
+    
+The following illustrates the results of the new changes - 
+
+![GitHub Logo](/Pictures/Flying_Up_Down.gif)
+
 #### Part 3 - Making the size of the land more dynamic
 #### Part 4 - Adjusting aircraft speed depending on the height
 
