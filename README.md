@@ -3,7 +3,7 @@ A flight simulator made from scratch using the graphical capabilities of process
 ## Getting Started
 These instructions will help get the flight simulator up and running. 
 ### Prerequisites
-Get the processing environment, an open-source graphical library. This code can be replicated to be  written in Python also. I have done it in Java. Visit this website for more information about the python environment - https://github.com/jdf/processing.py \
+Get the processing environment, an open-source graphical library. This code can be replicated to be  written in Python also. I have done it in Java. Visit this website for more information about the python environment - https://github.com/jdf/processing.py 
 The processing environment looks like the following - 
 
 ![GitHub Logo](/Pictures/procEnv_Java.jpg)
