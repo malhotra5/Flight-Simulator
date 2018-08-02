@@ -166,6 +166,25 @@ We need to make sure that we increase the number of columns and rows as we go hi
 #### Part 4 - Adjusting aircraft speed depending on the height
 
 ### Making graphics for plane's roll
+The roll is currently controlled by the Y-axis. Although, those who have flown a flight simulator before would know that the roll of the aircraft, has an influence on it's yaw. We can control it using the *A* and *D* keys. Lets also initialize variables for roll and yaw then update them. We don't want too drastic of changes to the yaw, so we divide it by 100. 
+
+    if(key == 'd'){
+        roll-= 0.07;
+        yaw = roll/100;
+    }
+    if(key == 'a'){
+        roll += 0.07;
+        yaw = roll/100;
+    }
+    
+You can add this piece of code to your keyPressed() function. We use the roll and yaw to manipulate the Y and Z axis. We don't really move the plane, we move the axis to make it look like we are moving the plane. We also need to initialize a variable **prevYaw**. This is the yaw value we will constantly update. We will use the roll values above, and the updated yaw values like so - 
+
+    rotateY(roll);
+    prevYaw += yaw;
+    rotateZ(prevYaw);
+    
+ The reason for using **prevYaw** is to make sure that we are constantly moving the Z-axis as long as the Y-axis is tilted. 
+
 
 ### Detecting collision
 
