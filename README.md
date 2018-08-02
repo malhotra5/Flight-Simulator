@@ -71,7 +71,7 @@ To specify z-values, we need to change the coordinates of the vertices in the tr
         }
         yoff += 0.07;
     }
-Notice that we used the noise function to create a random value. If you choose to use a random value instead, you will notice the  z values to be extremely different, which will make the land look very artifical. We use the noise (perlin noise) function to get more of a natural like look by getting random numbers that are relatively close to each other. Later on, you will see 2 pictures, showing the difference between the noise and the random function. \
+Notice that we used the noise function to create a random value. If you choose to use a random value instead, you will notice the  z values to be extremely different, which will make the land look very artifical. We use the noise (perlin noise) function to get more of a natural like look by getting random numbers that are relatively close to each other. Later on, you will see 2 pictures, showing the difference between the noise and the random function. 
 
 To create the z value, we take the render method that was previously shown and add the z values to each vertex. The following is the new render method.
 
@@ -116,7 +116,7 @@ There are 4 parts to it -
 * When the plane comes near the ground, it should seem relatively faster than when the plane is higher above the ground
 
 #### Part 1 - Adjusting the view of the plane 
-Lets start by assigning some keys to the pitch control. Similar to a plane, the *Down* arrow will make the plane's view move up. The *Up* arrow will make the plane's view move down. We can make a keyPressed() function for this task. \
+Lets start by assigning some keys to the pitch control. Similar to a plane, the *Down* arrow will make the plane's view move up. The *Up* arrow will make the plane's view move down. We can make a keyPressed() function for this task. 
 
 When we performed the transformation on the triangle strips, we rotated the X,Y and Z axis by 60 degrees. Now, we can assign that to a variable angle. Using the key binds (the up and down arrow keys), we can adjust the angle of the land to make it look like we are adjusting the view of the plane. The following code explaines it. 
 
@@ -136,7 +136,7 @@ This code results in the following -
  ![GitHub Logo](/Pictures/angleAdjust.gif)
  
 #### Part 2 - Adjusting the height of the land
-Now that we have adjusted the angle of view, we need to make like the plane is going higher or lower in the air, based on the angle. The plane should soar into the sky if the angle is extremely high, and plumet to the ground if the angle is extremely low. \
+Now that we have adjusted the angle of view, we need to make like the plane is going higher or lower in the air, based on the angle. The plane should soar into the sky if the angle is extremely high, and plumet to the ground if the angle is extremely low. 
 
 When we did the transformations at the start of this READ.me, we had performed 2 tranlations. Turns out, if we can change the transformations to support 3D values, then we can adjust the height of the ground. If the angle is very high, we start to push the ground away, if the angle if very low, we start to pull the ground towards the plane. This creates the visual effect of the plane flying.The new transformations are - 
 
@@ -147,7 +147,7 @@ We can now define the variable **height** above to be a function of the angle of
 
 ![GitHub Logo](/Pictures/heightDiagram.jpg)
 
-Notice that we are interested in the new height. If you are familiar with vectors, you can determine the velocity of the plane using the angle and the speed at which the plane flies. We defined this speed earlier to be the variable **flyRate**. Now, using this vector diagram, we can use the law of sines to determine the **new height**. This new height is the **sin of the angle x flyRate**. Therefore, we can keep adjusting the height of the plane by adding **original height + new height**. There is a catch though. We set the original angle of the plane to be at an angle of 60 degrees. So, when we calculate **new height**, we must subtract 60 degrees from the original angle. This way, when the plane starts, it is always moving straight. Not up or down. \
+Notice that we are interested in the new height. If you are familiar with vectors, you can determine the velocity of the plane using the angle and the speed at which the plane flies. We defined this speed earlier to be the variable **flyRate**. Now, using this vector diagram, we can use the law of sines to determine the **new height**. This new height is the **sin of the angle x flyRate**. Therefore, we can keep adjusting the height of the plane by adding **original height + new height**. There is a catch though. We set the original angle of the plane to be at an angle of 60 degrees. So, when we calculate **new height**, we must subtract 60 degrees from the original angle. This way, when the plane starts, it is always moving straight. Not up or down. 
 The following code adjusts height - 
 
     altitude = altitude + sin((angle-PI/3))*flyRate*1000; //We multiply the result into 1000 to make any significant progress.
