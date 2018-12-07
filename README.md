@@ -195,7 +195,6 @@ Java and Python. Evnvironment - Processing.
 
 ## Acknowledgments
 Daniel Shiffman - Perlin Noise
-Google Earth - Mpst of the observations that I applied to this flight simulator came from using the built in flight simulator for Google Earth
 
 ## Tasks in progress 
 I am working to replicate the work I have done into Python. Additional flight features such as the roll for the plane need to be added.
