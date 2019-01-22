@@ -188,10 +188,16 @@ You can add this piece of code to your keyPressed() function. We use the roll an
  ```   
  The reason for using **prevYaw** is to make sure that we are constantly moving the Z-axis as long as the Y-axis is tilted. 
 
+## Tasks in progress 
+I am working to replicate the work I have done into Python. Additional flight features such as the roll for the plane need to be added.
 
-### Detecting collision
+## Things to take away
+This is an example of how graphics used to be built. This serves as a foundation to understanding how powerful graphics can be made by simple and creative collection of shapes. 
 
-### Adding color
+## Things to improve
+These are the things you could improve
+* Add color - Color each triangle based on it's height in the z axis and the chosen orientation for the sun 
+* Collision detection - Detect collisions by determining whether you have passed the ground 
 
 ## Built With
 Java and Python. Evnvironment - Processing.
@@ -199,6 +205,7 @@ Java and Python. Evnvironment - Processing.
 ## Acknowledgments
 Daniel Shiffman - Perlin Noise
 
-## Tasks in progress 
-I am working to replicate the work I have done into Python. Additional flight features such as the roll for the plane need to be added.
+
+
+
 
