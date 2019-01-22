@@ -165,7 +165,13 @@ During the creation of the traingle strips, we passed in variables for the numbe
 
 We need to make sure that we increase the number of columns and rows as we go higher into the air. Later, we can add water or something else. For now I will keep it simple. 
 
+
+**Work in progress** 
+
 #### Part 4 - Adjusting aircraft speed depending on the height
+
+**Work in progress**
+
 
 ### Making graphics for plane's roll
 The roll is currently controlled by the Y-axis. Although, those who have flown a flight simulator before would know that the roll of the aircraft, has an influence on it's yaw. We can control it using the *A* and *D* keys. Lets also initialize variables for roll and yaw then update them. We don't want too drastic of changes to the yaw, so we divide it by 100. 
