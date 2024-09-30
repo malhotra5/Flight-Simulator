@@ -1,5 +1,6 @@
 Landscape land = new Landscape();
 PlaneIcon planeIcon = new PlaneIcon(600, 600);
+Controls controls = new Controls();
 int cols, rows;
 int scl = 20;
 int w;
@@ -11,7 +12,6 @@ float yaw;
 float prevYaw;
 
 float flying = 0;
-float flyRate = 0.01;
 float[][] terrain;
 IntDict keypresses;
 
@@ -40,8 +40,8 @@ void setup() {
 
 
 void draw() {
-  altitude = altitude + sin((angle-PI/3))*flyRate*1000;
-  flying -= flyRate;
+  altitude = altitude + sin((angle-PI/3))*controls.flyRate*1000;
+  flying -= controls.flyRate;
 
   float yoff = flying;
   for (int y = 0; y < rows; y++) {
@@ -71,70 +71,15 @@ void draw() {
   popMatrix();  
   
   
+  controls.executeControl();
   
-  if (keypresses.get("up") == 1){
-    angle -= 0.005;
-  }
-  
-  if (keypresses.get("down") == 1){
-    angle += 0.005;
-  }
-  
-  if (keypresses.get("left") == 1){
-     roll-= 0.007;
-       yaw = roll/100;
-  }
-  
-  if (keypresses.get("right") == 1){
-        roll += 0.007;
-        yaw = roll/100;
-  }
 }
 
 
 void keyPressed(){
-  if(key == 'w'){
-    
-    flyRate += 0.01;
-  }
-  
-  if(key == 's'){
-    flyRate -= 0.01;
-  }
-  
-  if(key == CODED){
-    if(keyCode == UP){
-      keypresses.set("up", 1);
-    }
-    if(keyCode == DOWN){
-      keypresses.set("down", 1);
-    }
-    if(keyCode == LEFT){
-      keypresses.set("left", 1);
-    }
-    if(keyCode == RIGHT){
-      keypresses.set("right", 1);
-    }
-   }
-    
-
+  controls.processKeyPress(key, keyCode, 1);
 }
 
 void keyReleased() {
-  
-  if(key == CODED){
-    if(keyCode == UP){
-      keypresses.set("up", 0);
-    }
-    if(keyCode == DOWN){
-      keypresses.set("down", 0);
-    }
-    if(keyCode == LEFT){
-      keypresses.set("left", 0);
-    }
-    if(keyCode == RIGHT){
-      keypresses.set("right", 0);
-       
-    }
-  }
+  controls.processKeyPress(key, keyCode, 0);
 }
