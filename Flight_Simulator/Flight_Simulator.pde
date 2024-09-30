@@ -6,10 +6,8 @@ int scl = 20;
 int w;
 int h;
 float altitude;
-float angle = PI/3;
-float roll;
-float yaw;
-float prevYaw;
+//float yaw;
+//float prevYaw;
 
 float flying = 0;
 float[][] terrain;
@@ -19,28 +17,27 @@ void setup() {
   size(600, 600, P3D);
   w = 4000;
   h = 4000;
-  
+
   cols = w / scl;
   rows = h/ scl;
   terrain = new float[cols][rows];
   altitude = 0;
-  roll = 0;
-  yaw = 0;
-  prevYaw = 0;
-  
-  keypresses = new IntDict();
-  keypresses.set("d",0);
-  keypresses.set("a",0);
-  keypresses.set("up",0);
-  keypresses.set("down",0);
-  keypresses.set("left",0);
-  keypresses.set("right",0);
 
+  //yaw = 0;
+  //prevYaw = 0;
+
+  keypresses = new IntDict();
+  keypresses.set("d", 0);
+  keypresses.set("a", 0);
+  keypresses.set("up", 0);
+  keypresses.set("down", 0);
+  keypresses.set("left", 0);
+  keypresses.set("right", 0);
 }
 
 
 void draw() {
-  altitude = altitude + sin((angle-PI/3))*controls.flyRate*1000;
+  altitude = altitude + sin((controls.angle-PI/3))*controls.flyRate*1000;
   flying -= controls.flyRate;
 
   float yoff = flying;
@@ -60,23 +57,21 @@ void draw() {
   noFill();
 
   pushMatrix();
-  translate(width/2, height/2+500,0);
-  rotateX(angle);
-  //println(-altitude);
-  translate(-w/2, -h/2,  -altitude);
-  rotateY(roll);
-  prevYaw += yaw;
-  rotateZ(prevYaw); 
+  translate(width/2, height/2+500, 0);
+  rotateX(controls.angle);
+  translate(-w/2, -h/2, -altitude);
+  //rotateY(controls.roll);
+  //prevYaw += yaw;
+  //rotateZ(prevYaw);
   land.render(rows, cols, terrain);
-  popMatrix();  
-  
-  
+  popMatrix();
+
+
   controls.executeControl();
-  
 }
 
 
-void keyPressed(){
+void keyPressed() {
   controls.processKeyPress(key, keyCode, 1);
 }
 
